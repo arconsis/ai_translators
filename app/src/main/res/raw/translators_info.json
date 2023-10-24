@@ -1,0 +1,18 @@
+[
+  {
+    "name": "DeepL",
+    "className": "com.example.aitranslators.services.DeepLTranslator"
+  },
+  {
+    "name": "ChatGPT",
+    "className": "com.example.aitranslators.services.ChatGPTTranslator"
+  },
+  {
+    "name": "Google",
+    "className": "com.example.aitranslators.services.GoogleTranslator"
+  },
+  {
+    "name": "Microsoft",
+    "className": "com.example.aitranslators.services.MicrosoftTranslator"
+  }
+]

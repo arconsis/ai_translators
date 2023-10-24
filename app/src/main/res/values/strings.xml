@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name" translatable="false">AI Translators</string>
+    <string name="source_Language">Source Language</string>
+    <string name="target_Language">Target Language</string>
+    <string name="translate">Translate</string>
+    <string name="saved">Saved:</string>
+    <string name="search_Language">Search Language</string>
+    <string name="detect_Language">Detect Language</string>
+    <string name="searchTermEmpty">Search field is empty!</string>
+    <string name="notReadyToTranslate">Source or target language is not selected!</string>
+    <string name="typeSomething">Type something to translate</string>
+    <string name="errorText">Unfortunately we were unable to translate (Not supported language or other internal error). Please try again or try a different translator. Sorry!\n\nError message from provider:</string>
+    <string name="detectedLanguage">Detected Language:</string>
+    <string name="detectingLanguage">Detecting Language</string>
+    <string name="responseTime">Response time (ms)</string>
+    <string name="translation">Translation:</string>
+    <string name="languageDetection">Language Detection:</string>
+</resources>

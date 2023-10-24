@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="source_Language">Ausgangssprache</string>
+    <string name="target_Language">Zielsprache</string>
+    <string name="translate">Übersetzen</string>
+    <string name="saved">Gespeichert:</string>
+    <string name="search_Language">Sprache suchen</string>
+    <string name="detect_Language">Sprache erkennen</string>
+    <string name="searchTermEmpty">Suchfeld ist leer!</string>
+    <string name="notReadyToTranslate">Ausgangs- oder Zielsprache wurde nicht ausgewählt!</string>
+    <string name="typeSomething">Tippe etwas zum Übersetzen</string>
+    <string name="errorText">Leider konnten wir nicht übersetzen (Entweder nicht unterstützte Sprache oder anderes internes Problem). Bitte versuchen Sie es erneut oder versuchen Sie es mit einem anderen Übersetzer, Sorry!\n\nFehlermeldung vom Anbieter:</string>
+    <string name="detectedLanguage">Erkannte Sprache:</string>
+    <string name="detectingLanguage">Sprache erkennen</string>
+    <string name="responseTime">Antwortzeit (ms)</string>
+    <string name="translation">Übersetzung:</string>
+    <string name="languageDetection">Spracherkennung:</string>
+</resources>

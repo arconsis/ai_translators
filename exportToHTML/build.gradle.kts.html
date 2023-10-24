@@ -1,0 +1,214 @@
+<html>
+<head>
+<title>build.gradle.kts</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #a9b7c6;}
+.s1 { color: #6a8759;}
+.s2 { color: #cc7832;}
+.s3 { color: #6897bb;}
+.s4 { color: #808080;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+build.gradle.kts</font>
+</center></td></tr></table>
+<pre><span class="s0">plugins {</span>
+    <span class="s0">id(</span><span class="s1">&quot;com.android.application&quot;</span><span class="s0">)</span>
+    <span class="s0">id(</span><span class="s1">&quot;org.jetbrains.kotlin.android&quot;</span><span class="s0">)</span>
+    <span class="s0">kotlin(</span><span class="s1">&quot;kapt&quot;</span><span class="s0">)</span>
+    <span class="s0">id(</span><span class="s1">&quot;com.google.dagger.hilt.android&quot;</span><span class="s0">)</span>
+<span class="s0">}</span>
+<span class="s2">val </span><span class="s0">API_KEY_DeepL = </span><span class="s1">&quot;API_KEY&quot;</span>
+<span class="s2">val </span><span class="s0">API_KEY_ChatGPT = </span><span class="s1">&quot;API_KEY_ChatGPT&quot;</span>
+<span class="s2">val </span><span class="s0">API_KEY_Microsoft = </span><span class="s1">&quot;API_KEY_Microsoft&quot;</span>
+<span class="s2">val </span><span class="s0">STRING = </span><span class="s1">&quot;String&quot;</span>
+
+<span class="s0">android {</span>
+    <span class="s0">namespace = </span><span class="s1">&quot;com.example.aitranslators&quot;</span>
+    <span class="s0">compileSdk = </span><span class="s3">34</span>
+
+    <span class="s0">defaultConfig {</span>
+        <span class="s0">applicationId = </span><span class="s1">&quot;com.example.aitranslators&quot;</span>
+        <span class="s0">minSdk = </span><span class="s3">24</span>
+        <span class="s0">targetSdk = </span><span class="s3">34</span>
+        <span class="s0">versionCode = </span><span class="s3">1</span>
+        <span class="s0">versionName = </span><span class="s1">&quot;1.0&quot;</span>
+
+        <span class="s0">testInstrumentationRunner = </span><span class="s1">&quot;androidx.test.runner.AndroidJUnitRunner&quot;</span>
+
+        <span class="s0">buildConfigField(STRING</span><span class="s2">, </span><span class="s0">API_KEY_DeepL</span><span class="s2">, </span><span class="s1">&quot;&quot;&quot;  &quot;ENTER YOUR API KEY&quot;  &quot;&quot;&quot;</span><span class="s0">)</span>
+        <span class="s0">vectorDrawables {</span>
+            <span class="s0">useSupportLibrary = </span><span class="s2">true</span>
+        <span class="s0">}</span>
+
+        <span class="s0">buildConfigField(STRING</span><span class="s2">, </span><span class="s0">API_KEY_ChatGPT</span><span class="s2">, </span><span class="s1">&quot;&quot;&quot;  &quot;ENTER YOUR API KEY&quot;  &quot;&quot;&quot;</span><span class="s0">)</span>
+        <span class="s0">vectorDrawables {</span>
+            <span class="s0">useSupportLibrary = </span><span class="s2">true</span>
+        <span class="s0">}</span>
+
+        <span class="s0">buildConfigField(STRING</span><span class="s2">, </span><span class="s0">API_KEY_Microsoft</span><span class="s2">, </span><span class="s1">&quot;&quot;&quot;  &quot;ENTER YOUR API KEY&quot;  &quot;&quot;&quot;</span><span class="s0">)</span>
+        <span class="s0">vectorDrawables {</span>
+            <span class="s0">useSupportLibrary = </span><span class="s2">true</span>
+        <span class="s0">}</span>
+
+        <span class="s0">android.buildFeatures.buildConfig = </span><span class="s2">true</span>
+
+        <span class="s0">javaCompileOptions {</span>
+            <span class="s0">annotationProcessorOptions {</span>
+                <span class="s0">arguments += mapOf(</span>
+                    <span class="s1">&quot;room.schemaLocation&quot; </span><span class="s0">to </span><span class="s1">&quot;</span><span class="s2">$</span><span class="s0">projectDir</span><span class="s1">/schemas&quot;</span><span class="s2">,</span>
+                    <span class="s1">&quot;room.incremental&quot; </span><span class="s0">to </span><span class="s1">&quot;true&quot;</span>
+                <span class="s0">)</span>
+            <span class="s0">}</span>
+        <span class="s0">}</span>
+    <span class="s0">}</span>
+
+    <span class="s0">buildTypes {</span>
+        <span class="s0">release {</span>
+            <span class="s0">isMinifyEnabled = </span><span class="s2">false</span>
+            <span class="s0">proguardFiles(</span>
+                <span class="s0">getDefaultProguardFile(</span><span class="s1">&quot;proguard-android-optimize.txt&quot;</span><span class="s0">)</span><span class="s2">,</span>
+                <span class="s1">&quot;proguard-rules.pro&quot;</span>
+            <span class="s0">)</span>
+        <span class="s0">}</span>
+    <span class="s0">}</span>
+    <span class="s0">compileOptions {</span>
+        <span class="s0">sourceCompatibility = JavaVersion.VERSION_1_8</span>
+        <span class="s0">targetCompatibility = JavaVersion.VERSION_1_8</span>
+    <span class="s0">}</span>
+    <span class="s0">kotlinOptions {</span>
+        <span class="s0">jvmTarget = </span><span class="s1">&quot;1.8&quot;</span>
+    <span class="s0">}</span>
+    <span class="s0">buildFeatures {</span>
+        <span class="s0">compose = </span><span class="s2">true</span>
+        <span class="s0">viewBinding = </span><span class="s2">true  </span><span class="s4">//added</span>
+    <span class="s0">}</span>
+    <span class="s0">composeOptions {</span>
+        <span class="s0">kotlinCompilerExtensionVersion = </span><span class="s1">&quot;1.5.3&quot;</span>
+    <span class="s0">}</span>
+    <span class="s0">packaging {</span>
+        <span class="s0">resources {</span>
+            <span class="s0">excludes += </span><span class="s1">&quot;/META-INF/{AL2.0,LGPL2.1}&quot;</span>
+        <span class="s0">}</span>
+    <span class="s0">}</span>
+    <span class="s0">buildToolsVersion = </span><span class="s1">&quot;33.0.1&quot;</span>
+<span class="s0">}</span>
+
+<span class="s0">dependencies {</span>
+
+    <span class="s0">implementation(</span><span class="s1">&quot;androidx.core:core-ktx:1.9.0&quot;</span><span class="s0">)</span>
+    <span class="s0">implementation(</span><span class="s1">&quot;androidx.lifecycle:lifecycle-runtime-ktx:2.6.1&quot;</span><span class="s0">)</span>
+    <span class="s0">implementation(</span><span class="s1">&quot;androidx.activity:activity-compose:1.7.2&quot;</span><span class="s0">)</span>
+    <span class="s0">implementation(platform(</span><span class="s1">&quot;androidx.compose:compose-bom:2023.03.00&quot;</span><span class="s0">))</span>
+    <span class="s0">implementation(</span><span class="s1">&quot;androidx.compose.ui:ui&quot;</span><span class="s0">)</span>
+    <span class="s0">implementation(</span><span class="s1">&quot;androidx.compose.ui:ui-graphics&quot;</span><span class="s0">)</span>
+    <span class="s0">implementation(</span><span class="s1">&quot;androidx.compose.ui:ui-tooling-preview&quot;</span><span class="s0">)</span>
+    <span class="s0">implementation(</span><span class="s1">&quot;androidx.compose.material3:material3&quot;</span><span class="s0">)</span>
+
+    <span class="s0">testImplementation(</span><span class="s1">&quot;junit:junit:4.13.2&quot;</span><span class="s0">)</span>
+
+    <span class="s0">androidTestImplementation(</span><span class="s1">&quot;androidx.test.ext:junit:1.1.5&quot;</span><span class="s0">)</span>
+    <span class="s0">androidTestImplementation(</span><span class="s1">&quot;androidx.test.espresso:espresso-core:3.5.1&quot;</span><span class="s0">)</span>
+    <span class="s0">androidTestImplementation(platform(</span><span class="s1">&quot;androidx.compose:compose-bom:2023.03.00&quot;</span><span class="s0">))</span>
+    <span class="s0">androidTestImplementation(</span><span class="s1">&quot;androidx.compose.ui:ui-test-junit4&quot;</span><span class="s0">)</span>
+
+    <span class="s0">debugImplementation(</span><span class="s1">&quot;androidx.compose.ui:ui-tooling&quot;</span><span class="s0">)</span>
+    <span class="s0">debugImplementation(</span><span class="s1">&quot;androidx.compose.ui:ui-test-manifest&quot;</span><span class="s0">)</span>
+
+    <span class="s0">implementation(</span><span class="s1">&quot;androidx.compose.material:material:1.5.1&quot;</span><span class="s0">)</span>
+
+
+    <span class="s4">//ML Kit Google</span>
+    <span class="s0">implementation(</span><span class="s1">&quot;com.google.mlkit:translate:17.0.1&quot;</span><span class="s0">)</span>
+    <span class="s0">implementation(</span><span class="s1">&quot;com.google.mlkit:language-id:17.0.4&quot;</span><span class="s0">)</span>
+
+    <span class="s4">// retrofit</span>
+    <span class="s0">implementation(</span><span class="s1">&quot;com.squareup.retrofit2:retrofit:2.9.0&quot;</span><span class="s0">)</span>
+    <span class="s0">implementation(</span><span class="s1">&quot;com.squareup.retrofit2:converter-gson:2.9.0&quot;</span><span class="s0">)</span>
+    <span class="s4">//Kapt</span>
+    <span class="s0">implementation(</span><span class="s1">&quot;com.github.bumptech.glide:glide:4.12.0&quot;</span><span class="s0">)</span>
+    <span class="s4">//Coil</span>
+    <span class="s0">implementation(</span><span class="s1">&quot;io.coil-kt:coil-compose:2.2.2&quot;</span><span class="s0">)</span>
+
+    <span class="s4">//Navigation</span>
+    <span class="s0">implementation(</span><span class="s1">&quot;androidx.navigation:navigation-compose:2.5.3&quot;</span><span class="s0">)</span>
+
+    <span class="s4">// ViewModel</span>
+    <span class="s0">implementation(</span><span class="s1">&quot;androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.0-alpha03&quot;</span><span class="s0">)</span>
+    <span class="s4">// ViewModel utilities for Compose</span>
+    <span class="s0">implementation(</span><span class="s1">&quot;androidx.lifecycle:lifecycle-viewmodel-compose:2.6.0-alpha03&quot;</span><span class="s0">)</span>
+    <span class="s4">// LiveData</span>
+    <span class="s0">implementation(</span><span class="s1">&quot;androidx.lifecycle:lifecycle-livedata-ktx:2.6.0-alpha03&quot;</span><span class="s0">)</span>
+    <span class="s4">// Lifecycles only (without ViewModel or LiveData)</span>
+    <span class="s0">implementation(</span><span class="s1">&quot;androidx.lifecycle:lifecycle-runtime-ktx:2.6.0-alpha03&quot;</span><span class="s0">)</span>
+    <span class="s0">implementation(</span><span class="s1">&quot;androidx.lifecycle:lifecycle-runtime-compose:2.6.0-alpha03&quot;</span><span class="s0">)</span>
+    <span class="s4">// Serialization</span>
+    <span class="s0">implementation(</span><span class="s1">&quot;org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1&quot;</span><span class="s0">)</span>
+    <span class="s4">// Coroutines</span>
+    <span class="s0">implementation(</span><span class="s1">&quot;org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4&quot;</span><span class="s0">)</span>
+
+    <span class="s4">//Database Dependencies ROOM</span>
+    <span class="s2">val </span><span class="s0">room_version = </span><span class="s1">&quot;2.5.2&quot;</span>
+
+    <span class="s0">implementation(</span><span class="s1">&quot;androidx.room:room-runtime:</span><span class="s2">$</span><span class="s0">room_version</span><span class="s1">&quot;</span><span class="s0">)</span>
+    <span class="s0">annotationProcessor(</span><span class="s1">&quot;androidx.room:room-compiler:</span><span class="s2">$</span><span class="s0">room_version</span><span class="s1">&quot;</span><span class="s0">)</span>
+
+    <span class="s4">// To use Kotlin annotation processing tool (kapt)</span>
+    <span class="s0">kapt(</span><span class="s1">&quot;androidx.room:room-compiler:</span><span class="s2">$</span><span class="s0">room_version</span><span class="s1">&quot;</span><span class="s0">)</span>
+
+    <span class="s0">kapt (</span><span class="s1">&quot;android.arch.persistence.room:compiler:1.1.1&quot;</span><span class="s0">)</span>
+
+    <span class="s4">// optional - Kotlin Extensions and Coroutines support for Room</span>
+    <span class="s0">implementation(</span><span class="s1">&quot;androidx.room:room-ktx:</span><span class="s2">$</span><span class="s0">room_version</span><span class="s1">&quot;</span><span class="s0">)</span>
+
+    <span class="s4">// optional - RxJava2 support for Room</span>
+    <span class="s0">implementation(</span><span class="s1">&quot;androidx.room:room-rxjava2:</span><span class="s2">$</span><span class="s0">room_version</span><span class="s1">&quot;</span><span class="s0">)</span>
+
+    <span class="s4">// optional - RxJava3 support for Room</span>
+    <span class="s0">implementation(</span><span class="s1">&quot;androidx.room:room-rxjava3:</span><span class="s2">$</span><span class="s0">room_version</span><span class="s1">&quot;</span><span class="s0">)</span>
+
+    <span class="s4">// optional - Guava support for Room, including Optional and ListenableFuture</span>
+    <span class="s0">implementation(</span><span class="s1">&quot;androidx.room:room-guava:</span><span class="s2">$</span><span class="s0">room_version</span><span class="s1">&quot;</span><span class="s0">)</span>
+
+    <span class="s4">// optional - Test helpers</span>
+    <span class="s0">testImplementation(</span><span class="s1">&quot;androidx.room:room-testing:</span><span class="s2">$</span><span class="s0">room_version</span><span class="s1">&quot;</span><span class="s0">)</span>
+
+    <span class="s4">// optional - Paging 3 Integration</span>
+    <span class="s0">implementation(</span><span class="s1">&quot;androidx.room:room-paging:</span><span class="s2">$</span><span class="s0">room_version</span><span class="s1">&quot;</span><span class="s0">)</span>
+
+
+    <span class="s4">//Hilt</span>
+    <span class="s0">implementation(</span><span class="s1">&quot;androidx.hilt:hilt-navigation-compose:1.0.0&quot;</span><span class="s0">)</span>
+
+
+
+    <span class="s0">implementation (</span><span class="s1">&quot;com.google.dagger:hilt-android:2.48&quot;</span><span class="s0">)</span>
+    <span class="s0">kapt (</span><span class="s1">&quot;com.google.dagger:hilt-compiler:2.48&quot;</span><span class="s0">)</span>
+
+    <span class="s4">// For instrumentation tests</span>
+    <span class="s0">androidTestImplementation  (</span><span class="s1">&quot;com.google.dagger:hilt-android-testing:2.48&quot;</span><span class="s0">)</span>
+    <span class="s0">kaptAndroidTest (</span><span class="s1">&quot;com.google.dagger:hilt-compiler:2.48&quot;</span><span class="s0">)</span>
+
+    <span class="s4">// For local unit tests</span>
+    <span class="s0">testImplementation (</span><span class="s1">&quot;com.google.dagger:hilt-android-testing:2.48&quot;</span><span class="s0">)</span>
+    <span class="s0">kaptTest (</span><span class="s1">&quot;com.google.dagger:hilt-compiler:2.48&quot;</span><span class="s0">)</span>
+
+
+<span class="s0">}</span>
+
+
+
+<span class="s0">kapt {</span>
+    <span class="s0">correctErrorTypes = </span><span class="s2">true</span>
+<span class="s0">}</span>
+
+
+
+
+</pre>
+</body>
+</html>
