@@ -165,7 +165,7 @@ fun LanguageSelectionRow(
                 Icon(
                     imageVector = ImageVector.vectorResource(R.drawable.baseline_compare_arrows_24),
                     contentDescription = null,
-                    tint = if (uiData.sourceLanguageSelected && uiData.sourceLanguage != "Detect Language" && uiData.targetLanguageSelected) MaterialTheme.colors.primary else Color.Gray
+                    tint = if (uiData.sourceLanguageSelected && !uiData.detectingLanguage && uiData.targetLanguageSelected) MaterialTheme.colors.primary else Color.Gray
                 )
             }
 
