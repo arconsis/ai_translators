@@ -4,5 +4,5 @@
  - **[DeepL](https://www.deepl.com/pro-api?cta=header-pro-api) <br>**
  - **[ChatGPT](https://platform.openai.com/account/api-keys) <br>**
  - **[Google (Doesn't need Api Configuration)](https://developers.google.com/ml-kit/language/translation/android) <br>**
- - **[Microsoft](https://portal.azure.com/?quickstart=true#home and create new resource) <br>**
+ - **[Microsoft](https://portal.azure.com/?quickstart=true#home) and create new resource <br>**
 
